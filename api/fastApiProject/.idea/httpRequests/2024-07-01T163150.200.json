@@ -1,0 +1,7 @@
+{
+  "databases": [
+    "health_data",
+    "admin",
+    "local"
+  ]
+}
