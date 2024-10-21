@@ -3,7 +3,7 @@
 Este proyecto forma parte de mi Trabajo de Fin de Grado (TFG) y tiene como objetivo analizar los datos recopilados por diferentes relojes de salud inteligentes, específicamente Apple Watch, Garmin y Fitbit. El enfoque principal está en cómo estos dispositivos monitorean la salud y la actividad física, y cómo se pueden usar esos datos para obtener información útil.
 
 ## Descripción del Proyecto
-El proyecto se centra en analizar los tipos de datos que recopilan los dispositivos Apple Watch, Garmin y Fitbit. Estos datos incluyen métricas como la frecuencia cardíaca, la cantidad de pasos, las calorías quemadas y la calidad del sueño, entre otros. A través de una serie de scripts y análisis, el proyecto tiene como objetivo evaluar las características y la calidad de estos datos.
+El proyecto se centra en analizar los tipos de datos que recopilan los dispositivos Apple Watch, Garmin y Fitbit. Estos datos incluyen métricas como la frecuencia cardíaca, la cantidad de pasos, las calorías quemadas, entre otros. A través de una serie de scripts y análisis, el proyecto tiene como objetivo analizar y mostrar dichos datos.
 
 El repositorio contiene el código fuente para el análisis, los scripts de configuración del entorno de desarrollo, y las instrucciones detalladas para la instalación y configuración de todas las herramientas necesarias.
 
