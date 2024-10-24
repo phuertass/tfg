@@ -8,13 +8,18 @@ import '../styles/GraphsPage.css';
  * @component
  * @param {Object} props - Props del componente.
  * @param {Object} props.awData - Datos del Apple Watch.
+ * @param {Object} props.fitbitData - Datos del Fitbit.
  * @returns {JSX.Element} El componente de la página de gráficas.
  */
-const GraphsPage = ({ awData }) => {
+const GraphsPage = ({ awData, fitbitData }) => {
     return (
         <div>
             <h2>Gráficas de Datos de Salud</h2>
-            <ActivityChart awData={awData} />
+            {/* Gráfica de datos del Apple Watch */}
+            <div>
+                <h3>Apple Watch - Pasos por Actividad</h3>
+                <ActivityChart awData={awData} fitbitData={fitbitData}/>
+            </div>
         </div>
     );
 };

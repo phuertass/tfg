@@ -25,6 +25,7 @@ function App() {
     // Obtener datos de la API
     useEffect(() => {
         async function loadData() {
+            // Llamadas a la API para obtener los datos del Apple Watch y Fitbit
             const awData = await fetchData('http://127.0.0.1:8000/documents/health_data/aw_data');
             setAwData(awData);
 
@@ -39,6 +40,7 @@ function App() {
     useEffect(() => {
         let data = [];
 
+        // Filtrar los datos según el dispositivo seleccionado
         if (selectedDevice) {
             if (selectedDevice.value === 'applewatch') {
                 data = awData.documents;
@@ -46,9 +48,11 @@ function App() {
                 data = fitbitData.documents;
             }
         } else {
+            // Si no se selecciona ningún dispositivo, combinar los datos de ambos dispositivos
             data = [...awData.documents, ...fitbitData.documents];
         }
 
+        // Filtrar los datos según el rango de edad seleccionado
         if (selectedAge) {
             const [minAge, maxAge] = selectedAge.value.split('-');
             data = data.filter(doc => {
@@ -57,6 +61,7 @@ function App() {
             });
         }
 
+        // Filtrar los datos según la actividad seleccionada
         if (selectedActivity) {
             data = data.filter(doc => doc.activity_trimmed === selectedActivity.value);
         }
@@ -64,9 +69,10 @@ function App() {
         setFilteredData(data);
     }, [selectedDevice, selectedAge, selectedActivity, awData, fitbitData]);
 
-    // Calcular el resumen de los datos
+    // Calcular el resumen de los datos para el Apple Watch y Fitbit
     useEffect(() => {
         if (awData.documents.length > 0) {
+            // Calcular el resumen para el Apple Watch
             const summaryAW = awData.documents.reduce((acc, doc) => {
                 const activity = doc.activity_trimmed;
                 if (!acc[activity]) {
@@ -80,6 +86,7 @@ function App() {
         }
 
         if (fitbitData.documents.length > 0) {
+            // Calcular el resumen para el Fitbit
             const summaryFitbit = fitbitData.documents.reduce((acc, doc) => {
                 const activity = doc.activity_trimmed;
                 if (!acc[activity]) {
@@ -97,53 +104,17 @@ function App() {
         <Router>
             <div className="App">
                 <h1>Datos de Salud - Comparaciones de Relojes Inteligentes</h1>
+                {/* Barra de navegación para acceder a las distintas páginas */}
                 <nav>
                     <Link to="/">Inicio</Link> | <Link to="/filtered-data">Datos Filtrados</Link> | <Link to="/graphs">Gráficas</Link>
                 </nav>
                 <Routes>
-                    {/*<Route
-                        path="/"
-                        element={
-                            <div className="summary-section">
-                                <div className="summary-column">
-                                    <h2>Resumen de Datos del Apple Watch</h2>
-                                    {Object.keys(summary.applewatch).length > 0 ? (
-                                        <div className="summary-container">
-                                            {Object.entries(summary.applewatch).map(([activity, data]) => (
-                                                <div key={activity} className="summary-item">
-                                                    <h3>{activity}</h3>
-                                                    <p>Pasos Totales: {data.steps.toFixed(2)}</p>
-                                                    <p>Calorías Quemadas: {data.calories.toFixed(2)}</p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <p>Cargando resumen del Apple Watch...</p>
-                                    )}
-                                </div>
-                                <div className="summary-column">
-                                    <h2>Resumen de Datos del Fitbit</h2>
-                                    {Object.keys(summary.fitbit).length > 0 ? (
-                                        <div className="summary-container">
-                                            {Object.entries(summary.fitbit).map(([activity, data]) => (
-                                                <div key={activity} className="summary-item">
-                                                    <h3>{activity}</h3>
-                                                    <p>Pasos Totales: {data.steps.toFixed(2)}</p>
-                                                    <p>Calorías Quemadas: {data.calories.toFixed(2)}</p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <p>Cargando resumen del Fitbit...</p>
-                                    )}
-                                </div>
-                            </div>
-                        }
-                    />*/}
+                    {/* Ruta para la página de inicio que muestra el resumen */}
                     <Route
                         path="/"
                         element={<SummariesPage summary={summary} />}
                     />
+                    {/* Ruta para la página de datos filtrados */}
                     <Route
                         path="/filtered-data"
                         element={
@@ -157,10 +128,11 @@ function App() {
                             />
                         }
                     />
+                    {/* Ruta para la página de gráficas */}
                     <Route
                         path="/graphs"
                         element={
-                            <GraphsPage awData={awData} />
+                            <GraphsPage awData={awData} fitbitData={fitbitData} />
                         }
                     />
                 </Routes>
