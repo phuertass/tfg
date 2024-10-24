@@ -1,0 +1,41 @@
+dudas cuestiones:
+esta correcta el capitulo 1? añadir mas info? info innecesaria? cuestiones capitulo 3, incluir codigo imagenes pruebas?
+podria en vez de hacer un front realizar las impresiones con matplotlib?
+apendices???
+
+realizado:
+capitulo 1 y medio 2 documentacion
+documentacion react y fastapi
+modularizacion proyecto react
+tablas base de datos
+
+
+feedback:
+despues de la introduccion añadir motivacion 
+añadir objetivos tambien en introduccion
+
+esta correcta el capitulo 1?
+-cambiar bibliografia a numeracion
+-eliminar subsection que sea mas redactado
+-imagenes en capitulo 1
+-eliminar conclusion del capitulo 1, eso va al final 
+
+capitulo 2
+-tabla latex imagen
+
+
+capitulo 3
+presupuesto planificacion antes de software implementado
+
+
+diagrama clases -> tablas de base de datos
+esquema arquitectonico 
+plan de entregas
+
+
+diagrama conceptual -> tablas de base de datos
+planificacion y presupuesto -> esquema conceptual (antes de analisis y diseño)
+crear plan de entregas
+
+
+diseño analisis api -> tecnologias usadas en el proyecto
