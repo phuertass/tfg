@@ -1,0 +1,38 @@
+/* Estilos para la página de resúmenes */
+.summary-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.summary-column {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.summary-container {
+    margin-top: 10px;
+}
+
+.summary-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.summary-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.summary-item p {
+    margin: 5px 0;
+    color: #555;
+}

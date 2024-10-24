@@ -1,0 +1,59 @@
+/* Estilos para la página de datos filtrados */
+.filtered-data-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Estilos para el contenedor de la sección de filtros */
+.filter-section-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el contenedor de la tabla de datos filtrados */
+.filtered-data-table-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.filtered-data-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.filtered-data-table-container th, .filtered-data-table-container td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.filtered-data-table-container th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.filtered-data-table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.filtered-data-table-container tr:hover {
+    background-color: #ddd;
+}
+
+.filtered-data-table-container td {
+    color: #555;
+}

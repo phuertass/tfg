@@ -1,0 +1,23 @@
+/* Estilos para la página de gráficas */
+.graphs-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.graphs-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.graphs-page .chart-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
