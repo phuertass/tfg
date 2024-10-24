@@ -1,4 +1,7 @@
 import React from 'react';
+import '../styles/FilteredDataTable.css';
+
+
 
 /**
  * Componente para mostrar los datos filtrados en formato de tabla.

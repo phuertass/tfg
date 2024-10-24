@@ -37,7 +37,6 @@ const FilterSection = ({ awData, setSelectedDevice, setSelectedAge, setSelectedA
 
     return (
         <div className="filters">
-            <h2>Filtrar Datos</h2>
             <Select
                 options={deviceOptions}
                 onChange={setSelectedDevice}
