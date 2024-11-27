@@ -1,3 +1,13 @@
+GET http://127.0.0.1:8000/collections/health_data
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 0
+
+<> 2024-11-10T194918.200.json
+
+###
+
 GET http://127.0.0.1:8000/documents/health_data/aw_data
 Accept: application/json
 
@@ -338,13 +348,6 @@ GET http://127.0.0.1:8000/documents/health_data/aw_data
 Accept: application/json
 
 <> 2024-06-12T164544.500.txt
-
-###
-
-GET http://127.0.0.1:8000/collections/health_data
-Accept: application/json
-
-<> 2024-06-12T164528.200.json
 
 ###
 

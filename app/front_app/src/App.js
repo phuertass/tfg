@@ -4,6 +4,7 @@ import './styles/App.css';
 import GraphsPage from './pages/GraphsPage';
 import FilteredDataPage from './pages/FilteredDataPage';
 import SummariesPage from './pages/SummariesPage';
+import ComparisonPage from "./pages/ComparisonPage";
 import { fetchData } from './api';
 
 /**
@@ -106,7 +107,8 @@ function App() {
                 <h1>Datos de Salud - Comparaciones de Relojes Inteligentes</h1>
                 {/* Barra de navegación para acceder a las distintas páginas */}
                 <nav>
-                    <Link to="/">Inicio</Link> | <Link to="/filtered-data">Datos Filtrados</Link> | <Link to="/graphs">Gráficas</Link>
+                    <Link to="/">Inicio</Link> | <Link to="/filtered-data">Datos Filtrados</Link> |
+                    <Link to="/graphs">Gráficas</Link> | <Link to="/comparison">Comparación</Link>
                 </nav>
                 <Routes>
                     {/* Ruta para la página de inicio que muestra el resumen */}
@@ -133,6 +135,13 @@ function App() {
                         path="/graphs"
                         element={
                             <GraphsPage awData={awData} fitbitData={fitbitData} />
+                        }
+                    />
+                    {/* Ruta para la página de gráficas */}
+                    <Route
+                        path="/comparison"
+                        element={
+                            <ComparisonPage awData={awData} fitbitData={fitbitData} />
                         }
                     />
                 </Routes>

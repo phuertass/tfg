@@ -20,10 +20,12 @@ const ActivityChart = ({ awData, fitbitData }) => {
     // Actualiza los datos de la gráfica según la actividad seleccionada
     useEffect(() => {
         if ((awData.documents.length > 0 || fitbitData.documents.length > 0) && selectedActivity) {
-            const filteredAwData = awData.documents.filter(doc => doc.activity_trimmed === selectedActivity.value);
+            const filteredAwData = awData.documents.filter(doc => doc.activity_trimmed ===
+                selectedActivity.value);
             const formattedAwData = filteredAwData.map(doc => ['', doc.Applewatch.Calories_LE, null]);
 
-            const filteredFitbitData = fitbitData.documents.filter(doc => doc.activity_trimmed === selectedActivity.value);
+            const filteredFitbitData = fitbitData.documents.filter(doc => doc.activity_trimmed ===
+                selectedActivity.value);
             const formattedFitbitData = filteredFitbitData.map(doc => ['', null, doc.Fitbit.Calories_LE]);
 
             const combinedData = [...formattedAwData, ...formattedFitbitData];
@@ -57,7 +59,8 @@ const ActivityChart = ({ awData, fitbitData }) => {
                 placeholder="Selecciona una actividad"
             />
             {(awData.documents.length > 0 || fitbitData.documents.length > 0) && selectedActivity ? (
-                <ChartComponent title="Calorías por Actividad - Apple Watch y Fitbit" data={chartData} options={options} />
+                <ChartComponent title="Calorías por Actividad - Apple Watch y Fitbit" data={chartData}
+                                options={options} />
             ) : (
                 <p>Cargando datos o selecciona una actividad...</p>
             )}

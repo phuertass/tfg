@@ -14,10 +14,9 @@ import '../styles/GraphsPage.css';
 const GraphsPage = ({ awData, fitbitData }) => {
     return (
         <div>
-            <h2>Gráficas de Datos de Salud</h2>
+            <h2>Gráficas de Calorías por actividad</h2>
             {/* Gráfica de datos del Apple Watch */}
             <div>
-                <h3>Apple Watch - Pasos por Actividad</h3>
                 <ActivityChart awData={awData} fitbitData={fitbitData}/>
             </div>
         </div>

@@ -29,7 +29,6 @@ const FilteredDataPage = ({ awData, fitbitData, setSelectedDevice, setSelectedAg
                 />
             </div>
             <div className="filtered-data-table-container">
-                <h2>Datos Filtrados</h2>
                 <FilteredDataTable filteredData={filteredData} />
             </div>
         </div>
